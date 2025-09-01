@@ -92,7 +92,7 @@ Set an environment variable pointing to your key before running the script:
 | 10                | Ne         | 20.179            | Noble      | 1898
 | 18                | Ar         | 39.948            | Noble      | 1894
 
-
+![image alt](https://github.com/alyero24/ETL/blob/e15d408065caff16ce1ad2d932bfbfa7d609fd42/Screenshot%202025-09-01%20125219.png)
 
 **What You’ll Learn**
 
