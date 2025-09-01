@@ -1,12 +1,15 @@
 # Periodic Table → BigQuery
 This project fetches periodic table element data from the ptable.com JSON API, cleans it into a pandas **DataFrame**, and uploads it into **Google BigQuery** for querying and analysis.
 
-**Sample Output**
-| Atomic Number | Symbol | Atomic Weight | Electron Configuration | Series   | Melting Point (K) | Boiling Point (K) | Electronegativity | Valence | Discovery Year |
-|---------------|--------|---------------|-------------------------|----------|-------------------|------------------|-------------------|---------|----------------|
-| 1             | H      | 1.008         | 1s1                     | Nonmetal | 14.01             | 20.28            | 2.20              | 1       | 1766           |
-| 2             | He     | 4.002602      | 1s2                     | Noble    | —                 | 4.22             | —                 | 0       | 1895           |
-| 3             | Li     | 6.94          | [He] 2s1	               | Alkali	  | 453.69            | 1615             | 0.98              | 1       | 1817           |
+**Tools Used**
+
+Python 
+
+Google BigQuery
+
+pandas-gbq
+
+Requests
 
 **Features**
 
@@ -20,15 +23,41 @@ This project fetches periodic table element data from the ptable.com JSON API, c
 
 - Ready for data analytics and visualization with SQL or BI tools
 
-**Tools Used**
 
-Python 
+**Sample Output**
+| Atomic Number | Symbol | Atomic Weight | Electron Configuration | Series   | Melting Point (K) | Boiling Point (K) | Electronegativity | Valence | Discovery Year |
+|---------------|--------|---------------|-------------------------|----------|-------------------|------------------|-------------------|---------|----------------|
+| 1             | H      | 1.008         | 1s1                     | Nonmetal | 14.01             | 20.28            | 2.20              | 1       | 1766           |
+| 2             | He     | 4.002602      | 1s2                     | Noble    | —                 | 4.22             | —                 | 0       | 1895           |
+| 3             | Li     | 6.94          | [He] 2s1	               | Alkali	  | 453.69            | 1615             | 0.98              | 1       | 1817           |
 
-Google BigQuery
 
-pandas-gbq
 
-Requests
+
+**BigQuery Authentication**
+
+To upload data to BigQuery, you need a service account JSON key:
+
+Go to the Google Cloud Console → IAM & Admin → Service Accounts
+.
+
+Create a new service account (if you don’t have one).
+
+Assign it the BigQuery Admin role (or sufficient permissions to write tables).
+
+Generate and download the JSON key.
+
+Set an environment variable pointing to your key before running the script:
+
+
+    # Mac/Linux
+    export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/key.json"
+
+    # Windows
+    set GOOGLE_APPLICATION_CREDENTIALS="C:\path\to\key.json"
+
+
+
 
 # Sample Code Snippets
  **Upload DataFrame to BigQuery**
